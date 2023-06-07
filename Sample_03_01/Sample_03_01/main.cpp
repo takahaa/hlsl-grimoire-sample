@@ -71,9 +71,13 @@ int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPWSTR lpCmdLi
 
         if (!minus) {
             moveY = moveY + speedY;
+            moveX = moveX + speedX;
+
         }
         else if (minus) {
             moveY = moveY - speedY * speedUP;   //スピードを変化
+            moveX = moveX - speedX * speedUP;
+
         }
 
         if (moveY > 2) {
@@ -83,7 +87,7 @@ int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPWSTR lpCmdLi
             minus = false;
         }
 
-        mWorld.MakeTranslation(0.0f, moveY, 0.0f);
+        mWorld.MakeTranslation(moveX, moveY, 0.0f);
 
         // step-4 ワールド行列をグラフィックメモリにコピー
         cb.CopyToVRAM(mWorld);
