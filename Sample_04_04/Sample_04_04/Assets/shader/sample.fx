@@ -120,5 +120,81 @@ float4 PSMain(SPSIn psIn) : SV_Target0
     // テクスチャカラーに求めた光を乗算して最終出力カラーを求める
     finalColor.xyz *= lig;
 
+    //ポスタリゼーション
+    if (finalColor.x < 1.0f / 2) {
+        if (finalColor.x < 1.0f / 3) {
+            finalColor.x = 0.0f;
+        }
+        else {
+            finalColor.x = 0.5f;
+        }
+    }
+    else {
+        finalColor.x = 0.8f;
+    }
+    //
+    if (finalColor.y < 1.0f / 2) {
+        if (finalColor.y < 1.0f / 3) {
+            finalColor.y = 0.0f;
+        }
+        else {
+            finalColor.y = 0.5f;
+        }
+    }
+    else {
+        finalColor.y = 0.8f;
+    }
+    //
+    if (finalColor.z < 1.0f / 2) {
+        if (finalColor.z < 1.0f / 3) {
+            finalColor.z = 0.0f;
+        }
+        else {
+            finalColor.z = 0.5f;
+        }
+    }
+    else {
+        finalColor.z = 0.8f;
+    }
+
+    /*
+    //ソラリゼーション
+    if (finalColor.x < 0.9f) {
+        if (finalColor.x < 0.1f) {
+            finalColor.x = 1.0f;
+        }
+        else {
+            finalColor.x = 0.5f;
+        }
+    }
+    else {
+        finalColor.x = 0.8f;
+    }
+    //
+    if (finalColor.y < 0.9f) {
+        if (finalColor.y < 0.1f) {
+            finalColor.y = 1.0f;
+        }
+        else {
+            finalColor.y = 0.5f;
+        }
+    }
+    else {
+        finalColor.y = 0.8f;
+    }
+    //
+    if (finalColor.z < 0.9f) {
+        if (finalColor.z < 0.1f) {
+            finalColor.z = 1.0f;
+        }
+        else {
+            finalColor.z = 0.5f;
+        }
+    }
+    else {
+        finalColor.z = 0.8f;
+    }
+    */
+
     return finalColor;
 }

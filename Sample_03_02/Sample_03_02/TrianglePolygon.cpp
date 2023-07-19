@@ -64,18 +64,23 @@ void TrianglePolygon::InitPipelineState(RootSignature& rs)
 }
 void TrianglePolygon::InitVertexBuffer()
 {
-	m_vertices[0] = {
+	m_vertices[0] = {	//左下
 			{-0.5f, -0.5f, 0.0f},
 			{ 1.0f, 0.0f, 0.0f },
 			{ 0.0f, 0.0f }
 	};
-	m_vertices[1] = {
+	m_vertices[1] = {	//左上
 			{ 0.0f, 0.5f, 0.0f },
 			{ 0.0f, 1.0f, 0.0f },
 			{ 0.5f, 1.0f }
 	};
-	m_vertices[2] = {
+	m_vertices[2] = {	//右下
 			{ 0.5f, -0.5f, 0.0f },
+			{ 0.0f, 0.0f, 1.0f },
+			{1.0f, 0.0f}
+	};
+	m_vertices[3] = {	//右上
+			{ 0.5f, 0.5f, 0.0f },
 			{ 0.0f, 0.0f, 1.0f },
 			{1.0f, 0.0f}
 	};
