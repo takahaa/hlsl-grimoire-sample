@@ -153,13 +153,13 @@ int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPWSTR lpCmdLi
 		lightModel.UpdateWorldMatrix(light.spPosition, qRot, g_vec3One);
 
 		//light.spColor.x = pow(sin((double)frame / 300), 2) * 10.0f;
-		/*
+		
 		//EX　オリジナルの改造
-		light.spColor.x = pow(sin((double)frame / 300), 2) * 10.0f;
-		light.spColor.y = 10 - light.spColor.x / 2;
-		light.spColor.z = 10 - light.spColor.x / 2;
+		//light.spColor.x = pow(sin((double)frame / 300), 2) * 10.0f;
+		//light.spColor.y = 10 - light.spColor.x / 2;
+		//light.spColor.z = 10 - light.spColor.x / 2;
 		light.affectPow = 1.5f * (float)pow(sin((double)frame / 87), 4);
-		*/
+		
 		//light.spRange = frame* 100;
 		//light.spAngle = frame * Math::DegToRad(5.0f);
 		
