@@ -162,8 +162,9 @@ int WINAPI wWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance, LPWSTR lpCmdLi
 		*/
 		//light.spRange = frame* 100;
 		//light.spAngle = frame * Math::DegToRad(5.0f);
-		//ここから
-		//light.specularAperture = ;
+		
+		//鏡面反射が時間で変化する（途中）
+		//light.specularAperture++;
 
 		// 背景モデルをドロー
 		bgModel.Draw(renderContext);
